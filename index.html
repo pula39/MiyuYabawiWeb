@@ -19,12 +19,9 @@
       <div id="unity-warning"> </div>
       <div id="unity-footer">
         <div id="unity-webgl-logo"></div>
-        <a id="twitter-share" href="https://twitter.com/intent/tweet?text='%EB%AF%B8%EC%9C%A0%EB%A5%BC%20%EC%B0%BE%EC%95%84%EB%9D%BC!'%20%EA%B2%8C%EC%9E%84%EC%9D%84%20%ED%94%8C%EB%A0%88%EC%9D%B4%ED%96%88%EC%96%B4%EC%9A%94!%20%23%E9%9C%9E%E6%B2%A2%E3%83%9F%E3%83%A6%20%23%EB%AF%B8%EC%9C%A0%EB%A5%BC%EC%B0%BE%EC%95%84%EB%9D%BC%20%23%EB%B8%94%EB%A3%A8%EC%95%84%EC%B9%B4%EC%9D%B4%EB%B8%8C%20%23%EB%B8%94%EB%A3%A8%EC%95%84%EC%B9%B4%20%23BlueArchive%20%23%E3%83%96%E3%83%AB%E3%83%BC%E3%82%A2%E3%83%BC%E3%82%AB%E3%82%A4%E3%83%96%20%23%E3%83%96%E3%83%AB%E3%82%A2%E3%82%AB&url=https%3A%2F%2Fpula39.github.io%2FMiyuYabawiWeb"></a>
         <div id="unity-fullscreen-button"></div>
         <div id="unity-build-title">MiyuYabawi</div>
       </div>
-      <a
-        >Share</a>
     </div>
     <script>
       var container = document.querySelector("#unity-container");
@@ -83,9 +80,7 @@
         // Avoid draining fillrate performance on mobile devices,
         // and default/override low DPI mode on mobile browsers.
         config.devicePixelRatio = 1;
-        canvas.style.width = "1600px";
-        canvas.style.height = "900px";
-        // unityShowBanner('WebGL builds are not supported on mobile devices.');
+        unityShowBanner('WebGL builds are not supported on mobile devices.');
       } else {
         canvas.style.width = "1600px";
         canvas.style.height = "900px";
