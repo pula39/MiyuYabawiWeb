@@ -96,10 +96,14 @@
         var parsed = JSON.parse(jsonString);
 
         var creditButton = document.getElementById("credit-button");
-        creditButton.setAttribute("href", parsed["creditUrl"])
+        if(creditButton){
+          creditButton.setAttribute("href", parsed["creditUrl"])
+        }
 
         var shareButton = document.getElementById("share-button");
-        shareButton.setAttribute("href", parsed["shareUrl"])
+        if(shareButton){
+          shareButton.setAttribute("href", parsed["shareUrl"])
+        }
       }
 
       console.log("mydata added");
