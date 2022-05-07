@@ -31,6 +31,7 @@
         data-show-count="false" data-lang="ja">@sakihimi3913をフォロー</a>
         <a href="https://twitter.com/sakihimi3913?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large"
           data-show-count="true" data-lang="ja">@sakihimi3913をフォロー</a>
+        <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgh.creati-bu.me%2Fgomibakogirl%2F&count_bg=%232681B8&title_bg=%23555555&icon=nintendo3ds.svg&icon_color=%23E7E7E7&title=%E3%83%97%E3%83%AC%E3%82%A4%E3%81%97%E3%81%A6%E3%81%8F%E3%82%8C%E3%81%9F%E5%85%88%E7%94%9F%E3%81%9F%E3%81%A1&edge_flat=true"/></a>
         <div id="unity-build-title">ミユをさがせ！</div>
       </div>
     </div>
@@ -61,6 +62,8 @@
         setTimeout(() => {
           mobileWarning.style.display = "none";
         }, 5000);
+        canvas.style.width = "1600px";
+        canvas.style.height = "900px";
       } else { 
         canvas.style.width = "1600px";
         canvas.style.height = "900px";
@@ -109,8 +112,15 @@
       }
 
       console.log("mydata added");
+
+      $('#canvas').css('width', '100%');
+      $(window).resize(function(){
+        $('#canvas').height($('#canvas').width() / 16 * 9);
+      });
     </script>
 
+
+    
 
 	<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </body>
