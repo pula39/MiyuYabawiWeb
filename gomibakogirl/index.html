@@ -113,7 +113,22 @@
 
       document.body.appendChild(myData);
 
+      var resizeFun = function(event){
+        var newWidth = window.innerWidth;
+        var newHeight = newWidth * (9.0 / 16.0);
+
+        canvas.style.height = newHeight + "px";
+        console.log("Resize me! ")
+        console.log(newWidth)
+        console.log(newHeight)
+        console.dir(canvas.style)
+      }
+      window.addEventListener('resize', resizeFun);
+
+      resizeFun(null)
+
       myData.setPassedDataFromUnity = (jsonString) => {
+        resizeFun();
         console.log("I got a jsonString");
         console.log(JSON.stringify(jsonString));
 
@@ -131,23 +146,6 @@
       };
 
       console.log("mydata added");
-
-      var resizeFun = function(event){
-        var canvas = document.querySelector("#unity-canvas");
-
-        var newWidth = canvas.width;
-        var newHeight = newWidth * (9.0 / 16.0);
-
-        canvas.style["height"] = newHeight+ "px";
-
-        console.log("Resize me! ")
-        console.log(canvas.style.width)
-        console.log(canvas.style.height)
-        console.log(newHeight+ "px")
-      }
-      window.addEventListener('resize', resizeFun);
-
-      resizeFun(null)
 
     </script>
 
