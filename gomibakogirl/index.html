@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>ミユをさがせ！</title>
-    <link rel="shortcut icon" href="WebData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
-    <meta property="og:url" content="https://creati-bu.me/games/gomibakogirl">
-    <meta property="og:title" content="ミユをさがせ！">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="WebData/og-thumbnail.png">
-    <meta property="og:description" content="先生…見つけてくれます……よね？">
+    <link rel="shortcut icon" href="WebData/favicon.ico" />
+    <link rel="stylesheet" href="TemplateData/style.css" />
+    <meta property="og:url" content="https://creati-bu.me/games/gomibakogirl" />
+    <meta property="og:title" content="ミユをさがせ！" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="WebData/og-thumbnail.png" />
+    <meta property="og:description" content="先生…見つけてくれます……よね？" />
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
@@ -25,13 +25,30 @@
         モバイルデバイスではプレイに問題がある場合があります。
       </div>
       <div id="unity-footer">
-        <a id="share-button" target="_blank" rel="noopener noreferrer">結果をシェア</a>
+        <a id="share-button" target="_blank" rel="noopener noreferrer"
+          >結果をシェア</a
+        >
         <a id="credit-button" target="_blank" rel="noopener noreferrer"></a>
-        <a href="https://twitter.com/sakihimi3913?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large"
-        data-show-count="false" data-lang="ja">@sakihimi3913をフォロー</a>
-        <a href="https://twitter.com/sakihimi3913?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large"
-          data-show-count="true" data-lang="ja">@sakihimi3913をフォロー</a>
-        <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgh.creati-bu.me%2Fgomibakogirl%2F&count_bg=%232681B8&title_bg=%23555555&icon=nintendo3ds.svg&icon_color=%23E7E7E7&title=%E3%83%97%E3%83%AC%E3%82%A4%E3%81%97%E3%81%A6%E3%81%8F%E3%82%8C%E3%81%9F%E5%85%88%E7%94%9F%E3%81%9F%E3%81%A1&edge_flat=true"/></a>
+        <a
+          href="https://twitter.com/sakihimi3913?ref_src=twsrc%5Etfw"
+          class="twitter-follow-button"
+          data-size="large"
+          data-show-count="false"
+          data-lang="ja"
+          >@sakihimi3913をフォロー</a
+        >
+        <a
+          href="https://twitter.com/sakihimi3913?ref_src=twsrc%5Etfw"
+          class="twitter-follow-button"
+          data-size="large"
+          data-show-count="true"
+          data-lang="ja"
+          >@sakihimi3913をフォロー</a
+        >
+        <a href="https://hits.seeyoufarm.com"
+          ><img
+            src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgh.creati-bu.me%2Fgomibakogirl%2F&count_bg=%232681B8&title_bg=%23555555&icon=nintendo3ds.svg&icon_color=%23E7E7E7&title=%E3%83%97%E3%83%AC%E3%82%A4%E3%81%97%E3%81%A6%E3%81%8F%E3%82%8C%E3%81%9F%E5%85%88%E7%94%9F%E3%81%9F%E3%81%A1&edge_flat=true"
+        /></a>
         <div id="unity-build-title">ミユをさがせ！</div>
       </div>
     </div>
@@ -62,11 +79,11 @@
         setTimeout(() => {
           mobileWarning.style.display = "none";
         }, 5000);
-        canvas.style.width = "1600px";
-        canvas.style.height = "900px";
-      } else { 
-        canvas.style.width = "1600px";
-        canvas.style.height = "900px";
+        canvas.style.width = "100%";
+        canvas.style.height = "100%";
+      } else {
+        canvas.style.width = "100%";
+        canvas.style.height = "100%";
       }
       loadingBar.style.display = "block";
 
@@ -75,16 +92,18 @@
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
-        }).then((unityInstance) => {
-          loadingBar.style.display = "none";
-          if(fullscreenButton){
-            fullscreenButton.onclick = () => {
-              unityInstance.SetFullscreen(1);
-            };
-          }
-        }).catch((message) => {
-          alert(message);
-        });
+        })
+          .then((unityInstance) => {
+            loadingBar.style.display = "none";
+            if (fullscreenButton) {
+              fullscreenButton.onclick = () => {
+                unityInstance.SetFullscreen(1);
+              };
+            }
+          })
+          .catch((message) => {
+            alert(message);
+          });
       };
       document.body.appendChild(script);
 
@@ -92,7 +111,7 @@
       var myData = document.createElement("mydata");
       myData.setAttribute("id", "my-data");
 
-      document.body.appendChild(myData)
+      document.body.appendChild(myData);
 
       myData.setPassedDataFromUnity = (jsonString) => {
         console.log("I got a jsonString");
@@ -101,22 +120,34 @@
         var parsed = JSON.parse(jsonString);
 
         var creditButton = document.getElementById("credit-button");
-        if(creditButton){
-          creditButton.setAttribute("href", parsed["creditUrl"])
+        if (creditButton) {
+          creditButton.setAttribute("href", parsed["creditUrl"]);
         }
 
         var shareButton = document.getElementById("share-button");
-        if(shareButton){
-          shareButton.setAttribute("href", parsed["shareUrl"])
+        if (shareButton) {
+          shareButton.setAttribute("href", parsed["shareUrl"]);
         }
-      }
+      };
 
       console.log("mydata added");
+
+      var resizeFun = function(event){
+        var newWidth = window.innerWidth;
+        var newHeight = newWidth * (9.0 / 16.0);
+
+        canvas.style.height = newHeight + "px";
+        console.log("Resize me! ")
+        console.log(newWidth)
+        console.log(newHeight)
+        console.dir(canvas.style)
+      }
+      window.addEventListener('resize', resizeFun);
+
+      resizeFun(null)
+
     </script>
 
-
-    
-
-	<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8" ></script>
   </body>
 </html>
