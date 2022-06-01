@@ -82,8 +82,8 @@
         canvas.style.width = "100%";
         canvas.style.height = "100%";
       } else {
-        canvas.style.width = "90%";
-        canvas.style.height = "90%";
+        canvas.style.width = "100%";
+        canvas.style.height = "100%";
       }
       loadingBar.style.display = "block";
 
@@ -133,14 +133,17 @@
       console.log("mydata added");
 
       var resizeFun = function(event){
-        var newWidth = window.innerWidth;
+        var canvas = document.querySelector("#unity-canvas");
+
+        var newWidth = canvas.width;
         var newHeight = newWidth * (9.0 / 16.0);
 
-        canvas.style.height = newHeight + "px";
+        canvas.style["height"] = newHeight+ "px";
+
         console.log("Resize me! ")
-        console.log(newWidth)
-        console.log(newHeight)
-        console.dir(canvas.style)
+        console.log(canvas.style.width)
+        console.log(canvas.style.height)
+        console.log(newHeight+ "px")
       }
       window.addEventListener('resize', resizeFun);
 
