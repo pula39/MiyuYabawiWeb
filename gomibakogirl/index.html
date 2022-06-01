@@ -114,7 +114,7 @@
       document.body.appendChild(myData);
 
       var resizeFun = function(event){
-        var newWidth = window.innerWidth;
+        var newWidth = canvas.getBoundingClientRect().width;
         var newHeight = newWidth * (9.0 / 16.0);
 
         canvas.style.height = newHeight + "px";
